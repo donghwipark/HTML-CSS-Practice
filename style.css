@@ -4,7 +4,7 @@
 :root {
     --main-color: #5D9AB2;
     --accent-color: #bf6a7a;
-    --dark-main-color: 2B5566;
+    --dark-main-color: #2B5566;
     --text-bright-color: #fff;
     --icon-color: #fff;
     --icon-bk-color: #ddd;
@@ -229,15 +229,8 @@ body {
 }
 
 /* 콘텐츠 D: 개요(이미지 + 글자: 반대로 배치하기) */
-.conD {
-    background-image: url(img/life.jpg);
-    background-position: center;
-    background-size: cover;
-}
-
 .conD .text {
     padding: 20px;
-    background-color: rgba(255,255,255,0.5);
 }
 
 .conD .container {
@@ -246,8 +239,9 @@ body {
 
 .conD .photo {
     min-height: 200px;
-    background-image: none;
+    background-image: url(img/life.jpg);
     background-position: center;
+    background-size: cover;
 }
 
 .conD h2 {
@@ -299,11 +293,151 @@ body {
     }
     
     .conD .photo {
-        flex: 3;
+        flex: 0 0 400px;
     }
     
     .conD .text {
-        flex: 2;
+        flex: 1;
         padding: 50px;
     }
+}
+
+/* 푸터 */
+footer {
+    color: #fff;
+    color: var(--text-bright-color);
+    background-color: #2B5566;
+    background-color: var(--dark-main-color);
+}
+
+footer .container {
+    padding: 40px 20px;
+}
+
+@media (min-width: 768px) {
+    footer .container {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1000px;
+        max-width: var(--large-width);
+        margin-left: auto;
+        margin-right: auto;
+    }    
+    
+    .footA {
+        flex: 0 0 40%;
+    }
+    
+    .footB {
+        flex: 0 0 60%;
+    }
+    
+    .footC {
+        flex: 0 0 100%;
+    }
+}
+
+/*푸터 A: 사이트 정보*/
+.footA {
+    margin-bottom: 30px;    
+}
+
+.footA h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    letter-spacing: 0.2em;
+}
+
+.footA p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.footA a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/*푸터 B: 사이트 정보*/
+.footB div {
+    margin-bottom: 20px;    
+}
+
+.footB h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: solid 1px currentColor;
+    font-size: 14px;
+}
+
+.footB ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footB a {
+    display: block;
+    padding: 5px;
+    color: inherit;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.footB a:hover {
+    background-color: rgba(0,0,0,0.3);
+}
+
+@media (min-width: 768px) {
+    .footB {
+        display: flex;
+    }
+    
+    .footB div {
+        flex: 1;
+    }
+    
+    .footB div:not(:first-child) {
+        margin-left: 40px;
+    }
+}
+
+/* 푸터C: 저작권 */
+.footC {
+    font-size: 12px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* 푸터D: SNS 메뉴 */
+.footD {
+    margin-top: 20px;
+}
+
+.footD ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footD a {
+    display: block;
+    margin-right: 8px;
+    padding: 0px;
+    color: inherit;
+    font-size: 16px;
+    text-decoration: none;
+    border: solid 1px currentColor;
+    width: 2em;
+    line-height: 2em;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.footD a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
 }
